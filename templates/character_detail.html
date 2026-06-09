@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ character.name if character else "Character" }} - World of Mysteries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{{ url_for('home') }}" class="logo">World of <span>Mysteries</span></a>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('characters') }}">Characters</a>
+            <a href="{{ url_for('kingdoms') }}">Kingdoms</a>
+            <a href="{{ url_for('aura') }}">Aura System</a>
+            <a href="{{ url_for('sea_gates') }}">Sea Gates</a>
+            <a href="{{ url_for('timeline') }}">Timeline</a>
+            <a href="{{ url_for('chapters') }}">Chapters</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </div>
+</nav>
+
+{% if character %}
+
+<header class="page-header">
+    <h1>{{ character.name }}</h1>
+    <p>{{ character.role }}</p>
+</header>
+
+<section class="section">
+    <div class="grid-3">
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/' + character.image) }}" alt="{{ character.name }}">
+            <div class="card-content">
+                <h3>{{ character.name }}</h3>
+                <div class="tag-row">
+                    <span class="tag">Age: {{ character.age }}</span>
+                    <span class="tag">{{ character.aura }}</span>
+                    <span class="tag">{{ character.role }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-box" style="grid-column: span 2;">
+            <h2>Character Profile</h2>
+
+            <h3>Kingdom</h3>
+            <p>{{ character.kingdom }}</p>
+
+            <h3>Personality</h3>
+            <p>{{ character.personality }}</p>
+
+            <h3>Story Role</h3>
+            <p>{{ character.description }}</p>
+
+            <h3>Manga Usage</h3>
+            <p>
+                {{ character.name }} will appear in color manga pages, academy scenes,
+                battle panels, emotional story moments, and future mystery reveals.
+            </p>
+
+            <div class="tag-row">
+                <span class="tag">Character Profile</span>
+                <span class="tag">World of Mysteries</span>
+                <span class="tag">Manga Ready</span>
+            </div>
+
+            <br>
+            <a href="{{ url_for('characters') }}" class="btn">Back to Characters</a>
+        </div>
+
+    </div>
+</section>
+
+{% else %}
+
+<section class="section">
+    <div class="story-box">
+        <h2>Character Not Found</h2>
+        <p>This character profile is not available yet.</p>
+        <a href="{{ url_for('characters') }}" class="btn">Back to Characters</a>
+    </div>
+</section>
+
+{% endif %}
+
+<footer class="footer">
+    <p>© 2026 <span>World of Mysteries</span> | Created by I.M.Kumar</p>
+</footer>
+
+</body>
+</html>

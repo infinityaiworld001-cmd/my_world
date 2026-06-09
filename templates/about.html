@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - World of Mysteries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{{ url_for('home') }}" class="logo">World of <span>Mysteries</span></a>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('characters') }}">Characters</a>
+            <a href="{{ url_for('kingdoms') }}">Kingdoms</a>
+            <a href="{{ url_for('aura') }}">Aura System</a>
+            <a href="{{ url_for('sea_gates') }}">Sea Gates</a>
+            <a href="{{ url_for('timeline') }}">Timeline</a>
+            <a href="{{ url_for('chapters') }}">Chapters</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </div>
+</nav>
+
+<header class="page-header">
+    <h1>About World of Mysteries</h1>
+    <p>
+        An original fantasy anime universe created with passion, worldbuilding, mystery, and adventure.
+    </p>
+</header>
+
+<section class="section">
+    <div class="story-box">
+        <h2>About the Project</h2>
+        <p>
+            World of Mysteries is an original anime-inspired fantasy universe created by I.M.Kumar.
+            The story combines adventure, friendship, rivalry, hidden history, academy life,
+            elemental powers, and deep world mysteries.
+        </p>
+
+        <p>
+            The universe follows Kai Flameson, Jinga Flameson, Tyson Hattari, and many other warriors
+            as they uncover the truth behind the Seven Kingdoms, Sea Gates, Aura power, and ancient wars.
+        </p>
+
+        <h3>Creative Inspiration</h3>
+        <p>
+            The project is inspired by the feeling of large-scale anime adventures, powerful rivalries,
+            emotional friendships, mysterious worlds, and fantasy kingdoms. However, the characters,
+            world rules, Sea Gates, and Aura system are part of the original World of Mysteries universe.
+        </p>
+
+        <h3>Project Goal</h3>
+        <p>
+            The goal is to slowly build World of Mysteries into a complete story universe through
+            web chapters, character profiles, kingdom lore, and future manga-style content.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-title">
+        <span>PROJECT IDENTITY</span>
+        <h2>What Makes It Unique?</h2>
+        <p>The world is built around original lore, original characters, and long-term mysteries.</p>
+    </div>
+
+    <div class="grid-3">
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/hero_banner.png') }}" alt="Original Characters">
+            <div class="card-content">
+                <h3>Original Characters</h3>
+                <p>
+                    Kai, Jinga, Tyson, Eresawa, Free Dela, Lui, and many more characters
+                    are part of this universe.
+                </p>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/mythical_aura.png') }}" alt="Aura Power System">
+            <div class="card-content">
+                <h3>Aura Power System</h3>
+                <p>
+                    Elemental powers are connected to kingdoms, emotions, bloodlines,
+                    and ancient secrets.
+                </p>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/sea_gate.png') }}" alt="Sea Gate Mystery">
+            <div class="card-content">
+                <h3>Sea Gate Mystery</h3>
+                <p>
+                    Ocean portals release monsters and connect the present world to hidden history.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="story-box">
+        <h2>Creator Note</h2>
+        <p>
+            World of Mysteries started as a dream anime universe idea and is now becoming
+            a structured story project through a Flask website, worldbuilding pages,
+            character profiles, and future manga episodes.
+        </p>
+
+        <a href="{{ url_for('chapters') }}" class="btn">Explore Story Chapters</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 <span>World of Mysteries</span> | Created by I.M.Kumar</p>
+</footer>
+
+</body>
+</html>

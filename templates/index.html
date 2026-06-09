@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>World of Mysteries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{{ url_for('home') }}" class="logo">World of <span>Mysteries</span></a>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('characters') }}">Characters</a>
+            <a href="{{ url_for('kingdoms') }}">Kingdoms</a>
+            <a href="{{ url_for('aura') }}">Aura System</a>
+            <a href="{{ url_for('sea_gates') }}">Sea Gates</a>
+            <a href="{{ url_for('timeline') }}">Timeline</a>
+            <a href="{{ url_for('chapters') }}">Chapters</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <span class="hero-badge">Original Anime Universe by I.M.Kumar</span>
+
+            <h1>World of <span>Mysteries</span></h1>
+
+            <p>
+                A fantasy world divided by seven kingdoms, ruled by Aura power,
+                and threatened by mysterious Sea Gates rising from the ocean.
+                Follow Kai Flameson, Jinga Flameson, and Tyson Hattari as they
+                enter the Warrior Academy of Sea and uncover secrets hidden for thousands of years.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="{{ url_for('chapters') }}" class="btn">Read Episode 1</a>
+                <a href="{{ url_for('characters') }}" class="btn secondary">Explore Characters</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="section">
+    <div class="section-title">
+        <span>THE STORY BEGINS</span>
+        <h2>A World Ruled by Aura</h2>
+        <p>
+            In this world, power is not only strength. It is kingdom, bloodline,
+            history, mystery, and destiny.
+        </p>
+    </div>
+
+    <div class="story-box">
+        <h2>Story Introduction</h2>
+        <p>
+            The World of Mysteries is a fantasy anime universe where seven kingdoms
+            are built around elemental Aura powers. Royals control power while common
+            people struggle to survive. From the ocean depths, Sea Gates release monsters
+            into the world, forcing young warriors to train and fight for humanity's survival.
+        </p>
+
+        <p>
+            Kai Flameson is a silent boy carrying Fire Aura without understanding the full truth
+            of his past. Alongside his cheerful brother Jinga and the confident Wind warrior Tyson,
+            Kai enters the Warrior Academy of Sea, where destiny, rivalry, friendship, and ancient
+            secrets begin to unfold.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-title">
+        <span>WORLD MAP</span>
+        <h2>The Land of Seven Kingdoms</h2>
+        <p>The world is divided into powerful regions connected by aura, war, and hidden history.</p>
+    </div>
+
+    <div class="feature-banner banner-map">
+        <div>
+            <h2>Explore the World</h2>
+            <p>
+                Fire, Water, Wind, Lightning, Earth, Dark, and Ice kingdoms define
+                the balance of power across the world.
+            </p>
+            <a href="{{ url_for('kingdoms') }}" class="btn">View Kingdoms</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-title">
+        <span>MAIN HEROES</span>
+        <h2>Meet the First Warriors</h2>
+        <p>The story begins with three young warriors connected by fate.</p>
+    </div>
+
+    <div class="grid-3">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/kai.png') }}" alt="Kai Flameson">
+            <div class="card-content">
+                <h3>Kai Flameson</h3>
+                <p>
+                    A calm and silent fire aura user who wants to become strong
+                    enough to change the unfair world system.
+                </p>
+                <div class="tag-row">
+                    <span class="tag">Fire Aura</span>
+                    <span class="tag">Main Hero</span>
+                </div>
+                <br>
+                <a href="{{ url_for('character_detail', name='kai') }}" class="btn">View Profile</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/jinga.png') }}" alt="Jinga Flameson">
+            <div class="card-content">
+                <h3>Jinga Flameson</h3>
+                <p>
+                    Kai's cheerful younger brother with hidden Ice Aura potential,
+                    comedy energy, and emotional loyalty.
+                </p>
+                <div class="tag-row">
+                    <span class="tag">Ice Aura</span>
+                    <span class="tag">Brother</span>
+                </div>
+                <br>
+                <a href="{{ url_for('character_detail', name='jinga') }}" class="btn">View Profile</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/tyson.png') }}" alt="Tyson Hattari">
+            <div class="card-content">
+                <h3>Tyson Hattari</h3>
+                <p>
+                    A talented Wind Kingdom warrior who becomes Kai's first rival
+                    and an important ally in the academy journey.
+                </p>
+                <div class="tag-row">
+                    <span class="tag">Wind Aura</span>
+                    <span class="tag">Rival</span>
+                </div>
+                <br>
+                <a href="{{ url_for('character_detail', name='tyson') }}" class="btn">View Profile</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-title">
+        <span>WORLD PREVIEW</span>
+        <h2>Academy, Aura and Sea Gates</h2>
+        <p>Explore the major powers that shape the story.</p>
+    </div>
+
+    <div class="grid-3">
+        <div class="feature-banner banner-academy">
+            <div>
+                <h2>Warrior Academy of Sea</h2>
+                <p>
+                    A powerful academy where young warriors train to fight monsters
+                    and protect the world.
+                </p>
+            </div>
+        </div>
+
+        <div class="feature-banner banner-seagate">
+            <div>
+                <h2>Sea Gates</h2>
+                <p>
+                    Ancient ocean portals that release dangerous monsters and hide
+                    the truth of the world's origin.
+                </p>
+                <a href="{{ url_for('sea_gates') }}" class="btn">View Gates</a>
+            </div>
+        </div>
+
+        <div class="story-box">
+            <h2>Aura System</h2>
+            <p>
+                Aura is the spiritual energy of this world. Each kingdom is connected
+                to an element, but rare powers can break normal rules.
+            </p>
+            <a href="{{ url_for('aura') }}" class="btn">View Aura Types</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-title">
+        <span>EPISODE 1</span>
+        <h2>New Beginning: Flames of Fate</h2>
+        <p>The first episode introduces Kai, Jinga, Tyson, Sea Gates, and the academy.</p>
+    </div>
+
+    <div class="story-box">
+        <h3>Episode 1 Summary</h3>
+        <p>
+            Kai and Jinga travel through a forest while struggling with hunger and uncertainty.
+            Tyson appears and becomes suspicious of Kai's Fire Aura. At a lake, a Sea Gate
+            suddenly opens and monsters attack. Tyson saves Jinga using Wind Aura, while Kai
+            realizes his fire power is still unstable. After the incident, the trio moves toward
+            the Warrior Academy of Sea, where their destiny begins.
+        </p>
+
+        <a href="{{ url_for('chapter_detail', chapter_id='episode-1') }}" class="btn">Read Episode 1 Script</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 <span>World of Mysteries</span> | Created by I.M.Kumar</p>
+</footer>
+
+</body>
+</html>

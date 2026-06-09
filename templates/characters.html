@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Characters - World of Mysteries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{{ url_for('home') }}" class="logo">World of <span>Mysteries</span></a>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('characters') }}">Characters</a>
+            <a href="{{ url_for('kingdoms') }}">Kingdoms</a>
+            <a href="{{ url_for('aura') }}">Aura System</a>
+            <a href="{{ url_for('sea_gates') }}">Sea Gates</a>
+            <a href="{{ url_for('timeline') }}">Timeline</a>
+            <a href="{{ url_for('chapters') }}">Chapters</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </div>
+</nav>
+
+<header class="page-header">
+    <h1>Characters</h1>
+    <p>Meet the warriors, rivals, teachers, and powerful students of World of Mysteries.</p>
+</header>
+
+<section class="section">
+    <div class="section-title">
+        <span>FIRST GENERATION</span>
+        <h2>Main Characters</h2>
+        <p>These characters begin the journey inside the Warrior Academy of Sea.</p>
+    </div>
+
+    <div class="grid-3">
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/kai.png') }}" alt="Kai Flameson">
+            <div class="card-content">
+                <h3>Kai Flameson</h3>
+                <p>A silent Fire Aura user connected to the forgotten Fire Kingdom mystery.</p>
+                <div class="tag-row">
+                    <span class="tag">Age: 16</span>
+                    <span class="tag">Fire Aura</span>
+                    <span class="tag">Main Hero</span>
+                </div>
+                <br>
+                <a href="{{ url_for('character_detail', name='kai') }}" class="btn">View Profile</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/jinga.png') }}" alt="Jinga Flameson">
+            <div class="card-content">
+                <h3>Jinga Flameson</h3>
+                <p>Kai's cheerful younger brother with hidden Ice Aura potential.</p>
+                <div class="tag-row">
+                    <span class="tag">Age: 15</span>
+                    <span class="tag">Ice Aura</span>
+                    <span class="tag">Brother</span>
+                </div>
+                <br>
+                <a href="{{ url_for('character_detail', name='jinga') }}" class="btn">View Profile</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/tyson.png') }}" alt="Tyson Hattari">
+            <div class="card-content">
+                <h3>Tyson Hattari</h3>
+                <p>A Wind Kingdom warrior who becomes Kai's rival and ally.</p>
+                <div class="tag-row">
+                    <span class="tag">Age: 16</span>
+                    <span class="tag">Wind Aura</span>
+                    <span class="tag">Rival Ally</span>
+                </div>
+                <br>
+                <a href="{{ url_for('character_detail', name='tyson') }}" class="btn">View Profile</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-title">
+        <span>ACADEMY POWERHOUSES</span>
+        <h2>Elite Characters</h2>
+        <p>Powerful figures who influence the academy arc.</p>
+    </div>
+
+    <div class="grid-3">
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/eresawa.png') }}" alt="Eresawa">
+            <div class="card-content">
+                <h3>Eresawa</h3>
+                <p>A legendary teacher who can suppress or erase Aura during training.</p>
+                <div class="tag-row">
+                    <span class="tag">Teacher</span>
+                    <span class="tag">Mystery Aura</span>
+                    <span class="tag">Legendary</span>
+                </div>
+                <br>
+                <a href="{{ url_for('character_detail', name='eresawa') }}" class="btn">View Profile</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/free_dela.png') }}" alt="Free Dela">
+            <div class="card-content">
+                <h3>Free Dela</h3>
+                <p>One of the strongest hardworking students in the academy.</p>
+                <div class="tag-row">
+                    <span class="tag">Elite Student</span>
+                    <span class="tag">Hard Work</span>
+                    <span class="tag">Strong</span>
+                </div>
+                <br>
+                <a href="{{ url_for('character_detail', name='free_dela') }}" class="btn">View Profile</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/lui.png') }}" alt="Lui">
+            <div class="card-content">
+                <h3>Lui</h3>
+                <p>A dangerous student with frightening Blue Flame Aura.</p>
+                <div class="tag-row">
+                    <span class="tag">Blue Flame</span>
+                    <span class="tag">Dangerous</span>
+                    <span class="tag">Mysterious</span>
+                </div>
+                <br>
+                <a href="{{ url_for('character_detail', name='lui') }}" class="btn">View Profile</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="story-box">
+        <h2>Character Theme</h2>
+        <p>
+            World of Mysteries focuses on friendship, rivalry, hidden identity,
+            academy growth, ancient war secrets, and the emotional journey of young warriors.
+        </p>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 <span>World of Mysteries</span> | Created by I.M.Kumar</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seven Kingdoms - World of Mysteries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{{ url_for('home') }}" class="logo">World of <span>Mysteries</span></a>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('characters') }}">Characters</a>
+            <a href="{{ url_for('kingdoms') }}">Kingdoms</a>
+            <a href="{{ url_for('aura') }}">Aura System</a>
+            <a href="{{ url_for('sea_gates') }}">Sea Gates</a>
+            <a href="{{ url_for('timeline') }}">Timeline</a>
+            <a href="{{ url_for('chapters') }}">Chapters</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </div>
+</nav>
+
+<header class="page-header">
+    <h1>The Seven Kingdoms</h1>
+    <p>
+        The world is divided into seven powerful kingdoms, each connected
+        to a unique Aura element and ancient history.
+    </p>
+</header>
+
+<section class="section">
+    <div class="section-title">
+        <span>KINGDOM GALLERY</span>
+        <h2>World Nations</h2>
+        <p>Each kingdom has its own aura culture, warriors, rulers, and hidden secrets.</p>
+    </div>
+
+    <div class="grid-3">
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/fire_kingdom.png') }}" alt="Fire Kingdom">
+            <div class="card-content">
+                <h3>🔥 Fire Kingdom</h3>
+                <p>
+                    A kingdom believed to have been destroyed many years ago.
+                    Hidden secrets connect Kai Flameson to its forgotten legacy.
+                </p>
+                <div class="tag-row">
+                    <span class="tag">Fire Aura</span>
+                    <span class="tag">Lost Kingdom</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/water_kingdom.png') }}" alt="Water Kingdom">
+            <div class="card-content">
+                <h3>🌊 Water Kingdom</h3>
+                <p>
+                    A powerful maritime nation controlling sea trade routes,
+                    ports, and ocean defense forces.
+                </p>
+                <div class="tag-row">
+                    <span class="tag">Water Aura</span>
+                    <span class="tag">Ocean Power</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/wind_kingdom.png') }}" alt="Wind Kingdom">
+            <div class="card-content">
+                <h3>🌪 Wind Kingdom</h3>
+                <p>
+                    Home of Tyson Hattari. Famous for speed, agility,
+                    strategy, and skilled warriors.
+                </p>
+                <div class="tag-row">
+                    <span class="tag">Wind Aura</span>
+                    <span class="tag">Tyson's Kingdom</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/lightning_kingdom.png') }}" alt="Lightning Kingdom">
+            <div class="card-content">
+                <h3>⚡ Lightning Kingdom</h3>
+                <p>
+                    The current ruling kingdom that dominates the world.
+                    Its leaders claim to protect peace and order.
+                </p>
+                <div class="tag-row">
+                    <span class="tag">Lightning Aura</span>
+                    <span class="tag">Ruling Power</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/earth_kingdom.png') }}" alt="Earth Kingdom">
+            <div class="card-content">
+                <h3>🌎 Earth Kingdom</h3>
+                <p>
+                    Known for strong defenses, giant fortresses,
+                    and warriors with unmatched endurance.
+                </p>
+                <div class="tag-row">
+                    <span class="tag">Earth Aura</span>
+                    <span class="tag">Defense</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/dark_kingdom.png') }}" alt="Dark Kingdom">
+            <div class="card-content">
+                <h3>🌑 Dark Kingdom</h3>
+                <p>
+                    A mysterious nation connected to forbidden knowledge,
+                    hidden experiments, and lost history.
+                </p>
+                <div class="tag-row">
+                    <span class="tag">Dark Aura</span>
+                    <span class="tag">Forbidden Lore</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/ice_kingdom.png') }}" alt="Ice Kingdom">
+            <div class="card-content">
+                <h3>❄ Ice Kingdom</h3>
+                <p>
+                    A cold northern kingdom filled with ancient traditions
+                    and powerful ice aura users.
+                </p>
+                <div class="tag-row">
+                    <span class="tag">Ice Aura</span>
+                    <span class="tag">Ancient Tradition</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="story-box">
+        <h2>Kingdom History</h2>
+
+        <p>
+            Long ago, the Seven Kingdoms lived in balance.
+            However, wars, betrayals, and the appearance
+            of Sea Gates changed the world forever.
+        </p>
+
+        <p>
+            Today, many secrets have been hidden from history.
+            The younger generation believes the official stories,
+            but the truth may be completely different.
+        </p>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 <span>World of Mysteries</span> | Created by I.M.Kumar</p>
+</footer>
+
+</body>
+</html>

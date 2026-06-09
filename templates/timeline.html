@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timeline - World of Mysteries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{{ url_for('home') }}" class="logo">World of <span>Mysteries</span></a>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('characters') }}">Characters</a>
+            <a href="{{ url_for('kingdoms') }}">Kingdoms</a>
+            <a href="{{ url_for('aura') }}">Aura System</a>
+            <a href="{{ url_for('sea_gates') }}">Sea Gates</a>
+            <a href="{{ url_for('timeline') }}">Timeline</a>
+            <a href="{{ url_for('chapters') }}">Chapters</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </div>
+</nav>
+
+<header class="page-header">
+    <h1>World Timeline</h1>
+    <p>The hidden history behind Aura, Sea Gates, kingdoms, wars, and academy destiny.</p>
+</header>
+
+<section class="section">
+    <div class="section-title">
+        <span>WORLD HISTORY</span>
+        <h2>From Ancient Gates to Academy Era</h2>
+        <p>Every mystery begins somewhere in the forgotten past.</p>
+    </div>
+
+    <div class="feature-banner banner-map">
+        <div>
+            <h2>The Ancient World</h2>
+            <p>
+                The Seven Kingdoms were not always enemies. Long before the academy era,
+                the world was shaped by Aura, sea disasters, and hidden wars.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="story-box">
+        <h2>Ancient History</h2>
+
+        <h3>2000 Years Ago — Origin of Sea Gates</h3>
+        <p>
+            The first Sea Gates appeared from the ocean depths. Monsters entered the world,
+            and warriors began awakening Aura to survive.
+        </p>
+
+        <h3>Ancient Era — Birth of Seven Kingdoms</h3>
+        <p>
+            Humanity divided into seven kingdoms based on elemental Aura powers:
+            Fire, Water, Wind, Lightning, Earth, Dark, and Ice.
+        </p>
+
+        <h3>50 Years Ago — Seven Nation War</h3>
+        <p>
+            A massive war changed the balance of the world. Many truths were erased from history,
+            and the official records became controlled by the ruling powers.
+        </p>
+
+        <h3>Present Era — Warrior Academy of Sea</h3>
+        <p>
+            Young warriors are trained to fight Sea Gate monsters. Kai, Jinga, and Tyson begin
+            their journey during this era.
+        </p>
+
+        <h3>Future Mystery — The Truth of Fire Kingdom</h3>
+        <p>
+            Kai does not know the truth of his bloodline in the beginning. The mystery of the
+            Fire Kingdom will slowly reveal the hidden history of the world.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="grid-3">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/red_gate.png') }}" alt="Ancient Red Gate">
+            <div class="card-content">
+                <h3>Ancient Gate Era</h3>
+                <p>
+                    Red Gates are believed to be connected to ancient battles and the first Aura disasters.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/black_gate.png') }}" alt="Black Gate Disaster">
+            <div class="card-content">
+                <h3>Black Gate Incident</h3>
+                <p>
+                    A forbidden event from the past that the academy still fears to discuss openly.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/academy.png') }}" alt="Warrior Academy">
+            <div class="card-content">
+                <h3>Academy Era</h3>
+                <p>
+                    Kai, Jinga, and Tyson enter the Warrior Academy of Sea, where the modern story begins.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 <span>World of Mysteries</span> | Created by I.M.Kumar</p>
+</footer>
+
+</body>
+</html>

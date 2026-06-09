@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sea Gates - World of Mysteries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{{ url_for('home') }}" class="logo">World of <span>Mysteries</span></a>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('characters') }}">Characters</a>
+            <a href="{{ url_for('kingdoms') }}">Kingdoms</a>
+            <a href="{{ url_for('aura') }}">Aura System</a>
+            <a href="{{ url_for('sea_gates') }}">Sea Gates</a>
+            <a href="{{ url_for('timeline') }}">Timeline</a>
+            <a href="{{ url_for('chapters') }}">Chapters</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </div>
+</nav>
+
+<header class="page-header">
+    <h1>Sea Gates</h1>
+    <p>
+        Ancient ocean portals that release monsters into the world and hide the greatest mystery of history.
+    </p>
+</header>
+
+<section class="section">
+    <div class="feature-banner banner-seagate">
+        <div>
+            <h2>The Ocean Opens</h2>
+            <p>
+                Sea Gates appear near oceans, lakes, and deep water zones. When the water level rises,
+                the monsters become stronger and more dangerous.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-title">
+        <span>DANGER SYSTEM</span>
+        <h2>Sea Gate Levels</h2>
+        <p>Each gate has a different threat level depending on water energy and monster pressure.</p>
+    </div>
+
+    <div class="grid-3">
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/level1_gate.png') }}" alt="Level 1 Gate">
+            <div class="card-content">
+                <h3>Level 1 Gate</h3>
+                <p>Small monster waves. New academy students can survive with teamwork.</p>
+                <div class="tag-row">
+                    <span class="tag">Low Danger</span>
+                    <span class="tag">Beginner Level</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/level2_gate.png') }}" alt="Level 2 Gate">
+            <div class="card-content">
+                <h3>Level 2 Gate</h3>
+                <p>Stronger creatures appear. Students need proper aura control to fight back.</p>
+                <div class="tag-row">
+                    <span class="tag">Medium Danger</span>
+                    <span class="tag">Aura Control</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/level3_gate.png') }}" alt="Level 3 Gate">
+            <div class="card-content">
+                <h3>Level 3 Gate</h3>
+                <p>Large monsters and unstable water energy. Elite warriors are required.</p>
+                <div class="tag-row">
+                    <span class="tag">High Danger</span>
+                    <span class="tag">Elite Warriors</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/black_gate.png') }}" alt="Black Gate">
+            <div class="card-content">
+                <h3>Black Gate</h3>
+                <p>A forbidden gate connected to disasters, missing warriors, and ancient secrets.</p>
+                <div class="tag-row">
+                    <span class="tag">Forbidden</span>
+                    <span class="tag">Disaster Level</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/red_gate.png') }}" alt="Ancient Red Gate">
+            <div class="card-content">
+                <h3>Ancient Red Gate</h3>
+                <p>A legendary gate said to be linked to ancient wars and the beginning of Aura itself.</p>
+                <div class="tag-row">
+                    <span class="tag">Ancient</span>
+                    <span class="tag">War Mystery</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/white_gate.png') }}" alt="Unknown White Gate">
+            <div class="card-content">
+                <h3>Unknown White Gate</h3>
+                <p>A mysterious gate that does not follow normal aura rules or kingdom records.</p>
+                <div class="tag-row">
+                    <span class="tag">Unknown</span>
+                    <span class="tag">Hidden Truth</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="story-box">
+        <h2>Sea Gate Mystery</h2>
+        <p>
+            The official history says Sea Gates are natural disasters. But some warriors believe
+            the gates were created during an ancient war.
+        </p>
+
+        <p>
+            Kai, Jinga, and Tyson first encounter a Sea Gate near a lake. That incident becomes
+            the beginning of their journey toward the Warrior Academy of Sea.
+        </p>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 <span>World of Mysteries</span> | Created by I.M.Kumar</p>
+</footer>
+
+</body>
+</html>

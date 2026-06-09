@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aura System - World of Mysteries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{{ url_for('home') }}" class="logo">World of <span>Mysteries</span></a>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('characters') }}">Characters</a>
+            <a href="{{ url_for('kingdoms') }}">Kingdoms</a>
+            <a href="{{ url_for('aura') }}">Aura System</a>
+            <a href="{{ url_for('sea_gates') }}">Sea Gates</a>
+            <a href="{{ url_for('timeline') }}">Timeline</a>
+            <a href="{{ url_for('chapters') }}">Chapters</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </div>
+</nav>
+
+<header class="page-header">
+    <h1>Aura System</h1>
+    <p>
+        Aura is the source of power in the World of Mysteries.
+        Every warrior is born with the potential to awaken an Aura.
+    </p>
+</header>
+
+<section class="section">
+    <div class="section-title">
+        <span>AURA GALLERY</span>
+        <h2>Elemental Powers</h2>
+        <p>Each aura type has unique combat style, emotion, and kingdom connection.</p>
+    </div>
+
+    <div class="grid-4">
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/fire_aura.png') }}" alt="Fire Aura">
+            <div class="card-content">
+                <h3>🔥 Fire Aura</h3>
+                <p>Focused on destruction, power, courage, and explosive attacks.</p>
+                <div class="tag-row">
+                    <span class="tag">Power</span>
+                    <span class="tag">Destruction</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/water_aura.png') }}" alt="Water Aura">
+            <div class="card-content">
+                <h3>🌊 Water Aura</h3>
+                <p>Balanced power that can heal, defend, and adapt to many situations.</p>
+                <div class="tag-row">
+                    <span class="tag">Balance</span>
+                    <span class="tag">Healing</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/wind_aura.png') }}" alt="Wind Aura">
+            <div class="card-content">
+                <h3>🌪 Wind Aura</h3>
+                <p>Grants speed, movement, aerial attacks, and high mobility.</p>
+                <div class="tag-row">
+                    <span class="tag">Speed</span>
+                    <span class="tag">Movement</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/lightning_aura.png') }}" alt="Lightning Aura">
+            <div class="card-content">
+                <h3>⚡ Lightning Aura</h3>
+                <p>One of the fastest aura types, specializing in rapid attacks.</p>
+                <div class="tag-row">
+                    <span class="tag">Speed</span>
+                    <span class="tag">Burst Attack</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/earth_aura.png') }}" alt="Earth Aura">
+            <div class="card-content">
+                <h3>🌎 Earth Aura</h3>
+                <p>Strong defense, durability, and immense physical strength.</p>
+                <div class="tag-row">
+                    <span class="tag">Defense</span>
+                    <span class="tag">Strength</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/dark_aura.png') }}" alt="Dark Aura">
+            <div class="card-content">
+                <h3>🌑 Dark Aura</h3>
+                <p>A dangerous aura connected to shadows, secrets, and forbidden powers.</p>
+                <div class="tag-row">
+                    <span class="tag">Forbidden</span>
+                    <span class="tag">Shadow</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/ice_aura.png') }}" alt="Ice Aura">
+            <div class="card-content">
+                <h3>❄ Ice Aura</h3>
+                <p>Uses freezing attacks, control, and battlefield manipulation.</p>
+                <div class="tag-row">
+                    <span class="tag">Control</span>
+                    <span class="tag">Freeze</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="kingdom-card">
+            <img src="{{ url_for('static', filename='images/mythical_aura.png') }}" alt="Mythical Aura">
+            <div class="card-content">
+                <h3>✨ Mythical Aura</h3>
+                <p>The rarest aura type in existence. Only a few individuals possess it.</p>
+                <div class="tag-row">
+                    <span class="tag">Rare</span>
+                    <span class="tag">Legendary</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="story-box">
+        <h2>How Aura Works</h2>
+
+        <p>
+            Aura is awakened through training, emotion, combat, and natural talent.
+        </p>
+
+        <p>
+            Most warriors spend years mastering a single Aura type. However, some rare
+            individuals possess abilities beyond the understanding of ordinary people.
+        </p>
+
+        <p>
+            Legends speak of warriors capable of changing history using Mythical Aura.
+        </p>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 <span>World of Mysteries</span> | Created by I.M.Kumar</p>
+</footer>
+
+</body>
+</html>
