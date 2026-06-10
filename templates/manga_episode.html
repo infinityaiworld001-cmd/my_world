@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>World of Mysteries - Episode 1</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+
+        <a href="{{ url_for('home') }}" class="logo">
+            World of <span>Mysteries</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="{{ url_for('chapters') }}">Chapters</a>
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+
+    </div>
+</nav>
+
+<section class="section">
+
+    <div class="section-title">
+        <span>EPISODE 1</span>
+        <h2>New Beginning</h2>
+        <p>Page {{ page }} of {{ total_pages }}</p>
+    </div>
+
+    <div class="manga-reader">
+
+        <img
+        src="{{ url_for('static',
+        filename='images/manga/episode1/page' ~ page ~ '.png') }}"
+        alt="Manga Page">
+
+    </div>
+
+    <div class="manga-buttons">
+
+        {% if page > 1 %}
+        <a href="{{ url_for('manga_episode', page=page-1) }}"
+           class="btn secondary">
+            ← Previous
+        </a>
+        {% endif %}
+
+        {% if page < total_pages %}
+        <a href="{{ url_for('manga_episode', page=page+1) }}"
+           class="btn">
+            Next →
+        </a>
+        {% endif %}
+
+    </div>
+
+</section>
+
+</body>
+</html>
