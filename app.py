@@ -152,6 +152,14 @@ def chapter_detail(chapter_id):
 def about():
     return render_template("about.html")
 
+@app.route("/manga/episode-1/<int:page>")
+def manga_episode(page):
+    total_pages = 18
+    return render_template(
+        "manga_episode.html",
+        page=page,
+        total_pages=total_pages
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)
