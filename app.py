@@ -83,13 +83,10 @@ chapters_data = {
         ]
     },
     "episode-2": {
-        "title": "Episode 2: Warrior Academy",
-        "status": "Coming Soon",
-        "summary": "Kai, Jinga, and Tyson enter the Warrior Academy of Sea and meet powerful students and mysterious teachers.",
-        "content": [
-            "This episode will focus on academy entry, student introductions, Eresawa's appearance, and the beginning of warrior training."
-        ]
-    },
+    "title": "Episode 2: The Others Aura",
+    "status": "Released",
+    "summary": "Kai, Jinga, and Tyson witness the Aura powers of the other academy students as new friendships and rivalries begin."
+},
     "episode-3": {
         "title": "Episode 3: Aura Test",
         "status": "Coming Soon",
@@ -157,6 +154,23 @@ def manga_episode(page):
     total_pages = 18
     return render_template(
         "manga_episode.html",
+        page=page,
+        total_pages=total_pages
+    )
+
+@app.route("/manga/episode-2/<int:page>")
+def manga_episode2(page):
+
+    total_pages = 21
+
+    if page < 1:
+        page = 1
+
+    if page > total_pages:
+        page = total_pages
+
+    return render_template(
+        "manga_episode2.html",
         page=page,
         total_pages=total_pages
     )
