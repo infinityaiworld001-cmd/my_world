@@ -39,12 +39,75 @@
             </p>
 
             <div class="hero-buttons">
-                <a href="{{ url_for('chapters') }}" class="btn">Read Episode 1</a>
+                <a href="{{ url_for('chapters') }}" class="btn">📖 Read Latest Episodes</a>
                 <a href="{{ url_for('characters') }}" class="btn secondary">Explore Characters</a>
             </div>
         </div>
     </div>
 </header>
+
+<section class="section">
+    <div class="section-title">
+        <span>LATEST RELEASES</span>
+        <h2>Available Manga Episodes</h2>
+        <p>Read the newest chapters of World of Mysteries.</p>
+    </div>
+
+    <div class="grid-3">
+
+        <div class="chapter-card">
+            <h3>🔥 Episode 1</h3>
+            <h2>New Beginning</h2>
+            <p>
+                Kai and Jinga meet Tyson as a mysterious Sea Gate opens,
+                changing their destiny forever.
+            </p>
+
+            <div class="tag-row">
+                <span class="tag">Released ✅</span>
+                <span class="tag">Sea Gate</span>
+            </div>
+
+            <br>
+            <a href="/manga/episode-1/1" class="btn">📖 Read Now</a>
+        </div>
+
+        <div class="chapter-card">
+            <h3>⚡ Episode 2</h3>
+            <h2>The Others' Aura</h2>
+            <p>
+                The Warrior Academy reveals talented students from across
+                the Seven Kingdoms and their unique Aura abilities.
+            </p>
+
+            <div class="tag-row">
+                <span class="tag">Released ✅</span>
+                <span class="tag">Academy</span>
+            </div>
+
+            <br>
+            <a href="/manga/episode-2/1" class="btn">📖 Read Now</a>
+        </div>
+
+        <div class="chapter-card">
+            <h3>👥 Episode 3</h3>
+            <h2>Team Form</h2>
+            <p>
+                Students are assigned into teams as new friendships,
+                rivalries, and academy challenges begin.
+            </p>
+
+            <div class="tag-row">
+                <span class="tag">Released ✅</span>
+                <span class="tag">Teams</span>
+            </div>
+
+            <br>
+            <a href="/manga/episode-3/1" class="btn">📖 Read Now</a>
+        </div>
+
+    </div>
+</section>
 
 <section class="section">
     <div class="section-title">
@@ -102,7 +165,7 @@
 
     <div class="grid-3">
         <div class="card">
-            <img src="{{ url_for('static', filename='images/kai.png') }}" alt="Kai Flameson">
+            <img class="character-img" src="{{ url_for('static', filename='images/kai.png') }}" alt="Kai Flameson">
             <div class="card-content">
                 <h3>Kai Flameson</h3>
                 <p>
@@ -119,7 +182,7 @@
         </div>
 
         <div class="card">
-            <img src="{{ url_for('static', filename='images/jinga.png') }}" alt="Jinga Flameson">
+            <img class="character-img" src="{{ url_for('static', filename='images/jinga.png') }}" alt="Jinga Flameson">
             <div class="card-content">
                 <h3>Jinga Flameson</h3>
                 <p>
@@ -136,7 +199,7 @@
         </div>
 
         <div class="card">
-            <img src="{{ url_for('static', filename='images/tyson.png') }}" alt="Tyson Hattari">
+            <img class="character-img" src="{{ url_for('static', filename='images/tyson.png') }}" alt="Tyson Hattari">
             <div class="card-content">
                 <h3>Tyson Hattari</h3>
                 <p>
@@ -211,7 +274,8 @@
             the Warrior Academy of Sea, where their destiny begins.
         </p>
 
-        <a href="{{ url_for('chapter_detail', chapter_id='episode-1') }}" class="btn">Read Episode 1 Script</a>
+        <a href="/manga/episode-1/1" class="btn">📖 Read Episode 1 Manga</a>
+        <a href="{{ url_for('chapters') }}" class="btn secondary">📚 View All Episodes</a>
     </div>
 </section>
 
