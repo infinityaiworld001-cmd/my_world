@@ -365,6 +365,32 @@ a {
     border-bottom: 1px solid rgba(250, 204, 21, 0.45);
 }
 
+.manga-reader{
+    max-width:900px;
+    margin:auto;
+    background:#0f172a;
+    padding:20px;
+    border-radius:20px;
+}
+
+.manga-reader img{
+    width:100%;
+    border-radius:15px;
+    display:block;
+}
+
+.manga-buttons{
+    max-width:900px;
+    margin:25px auto;
+    display:flex;
+    justify-content:space-between;
+}
+
+.manga-buttons .btn{
+    min-width:150px;
+    text-align:center;
+}
+
 .page-header h1 {
     font-size: 56px;
     color: #facc15;
