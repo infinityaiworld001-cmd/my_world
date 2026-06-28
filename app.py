@@ -448,5 +448,18 @@ def manga_episode21(page):
         total_pages=total_pages
     )
 
+@app.route("/manga/episode-22/<int:page>")
+def manga_episode22(page):
+    total_pages = 15
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode22", page=1))
+
+    return render_template(
+        "manga_episode22.html",
+        page=page,
+        total_pages=total_pages
+    )
+
 if __name__ == "__main__":
     app.run(debug=True, port=8000)
