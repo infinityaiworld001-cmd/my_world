@@ -1,7 +1,11 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 
 app = Flask(__name__)
 
+
+# =========================================================
+# CHARACTER DATA
+# =========================================================
 
 characters_data = {
     "kai": {
@@ -12,8 +16,9 @@ characters_data = {
         "kingdom": "Unknown / Fire Kingdom Connection",
         "role": "Main Protagonist",
         "personality": "Silent, calm, serious, determined",
-        "description": "Kai Flameson is a silent Fire Aura user who wants to become strong enough to change the unfair world system. In the beginning, Kai does not know the truth about his bloodline, but his Fire Aura carries a hidden mystery connected to the destroyed Fire Kingdom."
+        "description": "Kai Flameson is a silent Fire Aura user who wants to become strong enough to change the unfair world system."
     },
+
     "jinga": {
         "name": "Jinga Flameson",
         "image": "jinga.png",
@@ -22,8 +27,9 @@ characters_data = {
         "kingdom": "Unknown / Ice Aura Connection",
         "role": "Kai's Younger Brother",
         "personality": "Funny, emotional, hungry, loyal",
-        "description": "Jinga is Kai's cheerful younger brother. He brings comedy and emotion to the story, but deep inside him lies hidden Ice Aura potential that may become important in the future."
+        "description": "Jinga is Kai's cheerful younger brother."
     },
+
     "tyson": {
         "name": "Tyson Hattari",
         "image": "tyson.png",
@@ -34,6 +40,7 @@ characters_data = {
         "personality": "Confident, sharp, playful, observant",
         "description": "Tyson Hattari is a talented Wind Aura warrior from the Wind Kingdom. He becomes suspicious of Kai after noticing his Fire Aura, and this begins their rivalry."
     },
+
     "eresawa": {
         "name": "Eresawa",
         "image": "eresawa.png",
@@ -44,6 +51,7 @@ characters_data = {
         "personality": "Calm, dangerous, powerful",
         "description": "Eresawa is a legendary teacher at the Warrior Academy of Sea. He has the ability to suppress Aura and carries deep knowledge about the world's hidden history."
     },
+
     "free_dela": {
         "name": "Free Dela",
         "image": "free_dela.png",
@@ -54,6 +62,7 @@ characters_data = {
         "personality": "Hardworking, silent, strong",
         "description": "Free Dela is one of the strongest academy students. His power comes from hard work, discipline, and an intimidating warrior presence."
     },
+
     "lui": {
         "name": "Lui",
         "image": "lui.png",
@@ -66,6 +75,10 @@ characters_data = {
     }
 }
 
+
+# =========================================================
+# CHAPTER DATA
+# =========================================================
 
 chapters_data = {
     "episode-1": {
@@ -82,11 +95,13 @@ chapters_data = {
             "Scene 6: After the fight, Kai realizes he must become stronger. The three boys continue toward the Warrior Academy of Sea."
         ]
     },
+
     "episode-2": {
-    "title": "Episode 2: The Others Aura",
-    "status": "Released",
-    "summary": "Kai, Jinga, and Tyson witness the Aura powers of the other academy students as new friendships and rivalries begin."
-},
+        "title": "Episode 2: The Others Aura",
+        "status": "Released",
+        "summary": "Kai, Jinga, and Tyson witness the Aura powers of the other academy students as new friendships and rivalries begin."
+    },
+
     "episode-3": {
         "title": "Episode 3: Aura Test",
         "status": "Coming Soon",
@@ -98,6 +113,10 @@ chapters_data = {
 }
 
 
+# =========================================================
+# MAIN WEBSITE ROUTES
+# =========================================================
+
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -105,13 +124,23 @@ def home():
 
 @app.route("/characters")
 def characters():
-    return render_template("characters.html", characters=characters_data)
+    return render_template(
+        "characters.html",
+        characters=characters_data
+    )
 
 
 @app.route("/character/<name>")
 def character_detail(name):
     character = characters_data.get(name)
-    return render_template("character_detail.html", character=character)
+
+    if character is None:
+        return redirect(url_for("characters"))
+
+    return render_template(
+        "character_detail.html",
+        character=character
+    )
 
 
 @app.route("/kingdoms")
@@ -136,38 +165,58 @@ def timeline():
 
 @app.route("/chapters")
 def chapters():
-    return render_template("chapters.html", chapters=chapters_data)
+    return render_template(
+        "chapters.html",
+        chapters=chapters_data
+    )
 
 
 @app.route("/chapter/<chapter_id>")
 def chapter_detail(chapter_id):
     chapter = chapters_data.get(chapter_id)
-    return render_template("chapter_detail.html", chapter=chapter)
+
+    if chapter is None:
+        return redirect(url_for("chapters"))
+
+    return render_template(
+        "chapter_detail.html",
+        chapter=chapter
+    )
 
 
 @app.route("/about")
 def about():
     return render_template("about.html")
 
+
+# =========================================================
+# MANGA EPISODE 1
+# =========================================================
+
 @app.route("/manga/episode-1/<int:page>")
 def manga_episode(page):
     total_pages = 18
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode", page=1))
+
     return render_template(
         "manga_episode.html",
         page=page,
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 2
+# =========================================================
+
 @app.route("/manga/episode-2/<int:page>")
 def manga_episode2(page):
-
     total_pages = 21
 
-    if page < 1:
-        page = 1
-
-    if page > total_pages:
-        page = total_pages
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode2", page=1))
 
     return render_template(
         "manga_episode2.html",
@@ -175,15 +224,17 @@ def manga_episode2(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 3
+# =========================================================
+
 @app.route("/manga/episode-3/<int:page>")
 def manga_episode3(page):
     total_pages = 11
 
-    if page < 1:
-        page = 1
-
-    if page > total_pages:
-        page = total_pages
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode3", page=1))
 
     return render_template(
         "manga_episode3.html",
@@ -191,16 +242,17 @@ def manga_episode3(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 4
+# =========================================================
+
 @app.route("/manga/episode-4/<int:page>")
 def manga_episode4(page):
-
     total_pages = 16
 
-    if page < 1:
-        page = 1
-
-    if page > total_pages:
-        page = total_pages
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode4", page=1))
 
     return render_template(
         "manga_episode4.html",
@@ -208,15 +260,17 @@ def manga_episode4(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 5
+# =========================================================
+
 @app.route("/manga/episode-5/<int:page>")
 def manga_episode5(page):
     total_pages = 20
 
-    if page < 1:
-        page = 1
-
-    if page > total_pages:
-        page = total_pages
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode5", page=1))
 
     return render_template(
         "manga_episode5.html",
@@ -224,15 +278,17 @@ def manga_episode5(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 6
+# =========================================================
+
 @app.route("/manga/episode-6/<int:page>")
 def manga_episode6(page):
     total_pages = 18
 
-    if page < 1:
-        page = 1
-
-    if page > total_pages:
-        page = total_pages
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode6", page=1))
 
     return render_template(
         "manga_episode6.html",
@@ -240,15 +296,17 @@ def manga_episode6(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 7
+# =========================================================
+
 @app.route("/manga/episode-7/<int:page>")
 def manga_episode7(page):
     total_pages = 18
 
-    if page < 1:
-        page = 1
-
-    if page > total_pages:
-        page = total_pages
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode7", page=1))
 
     return render_template(
         "manga_episode7.html",
@@ -256,15 +314,17 @@ def manga_episode7(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 8
+# =========================================================
+
 @app.route("/manga/episode-8/<int:page>")
 def manga_episode8(page):
     total_pages = 20
 
-    if page < 1:
-        page = 1
-
-    if page > total_pages:
-        page = total_pages
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode8", page=1))
 
     return render_template(
         "manga_episode8.html",
@@ -272,15 +332,17 @@ def manga_episode8(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 9
+# =========================================================
+
 @app.route("/manga/episode-9/<int:page>")
 def manga_episode9(page):
     total_pages = 20
 
-    if page < 1:
-        page = 1
-
-    if page > total_pages:
-        page = total_pages
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode9", page=1))
 
     return render_template(
         "manga_episode9.html",
@@ -288,21 +350,28 @@ def manga_episode9(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 10
+# =========================================================
+
 @app.route("/manga/episode-10/<int:page>")
 def manga_episode10(page):
     total_pages = 18
 
-    if page < 1:
-        page = 1
-
-    if page > total_pages:
-        page = total_pages
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode10", page=1))
 
     return render_template(
         "manga_episode10.html",
         page=page,
         total_pages=total_pages
     )
+
+
+# =========================================================
+# MANGA EPISODE 11
+# =========================================================
 
 @app.route("/manga/episode-11/<int:page>")
 def manga_episode11(page):
@@ -317,6 +386,11 @@ def manga_episode11(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 12
+# =========================================================
+
 @app.route("/manga/episode-12/<int:page>")
 def manga_episode12(page):
     total_pages = 15
@@ -329,6 +403,11 @@ def manga_episode12(page):
         page=page,
         total_pages=total_pages
     )
+
+
+# =========================================================
+# MANGA EPISODE 13
+# =========================================================
 
 @app.route("/manga/episode-13/<int:page>")
 def manga_episode13(page):
@@ -343,6 +422,11 @@ def manga_episode13(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 14
+# =========================================================
+
 @app.route("/manga/episode-14/<int:page>")
 def manga_episode14(page):
     total_pages = 18
@@ -355,6 +439,11 @@ def manga_episode14(page):
         page=page,
         total_pages=total_pages
     )
+
+
+# =========================================================
+# MANGA EPISODE 15
+# =========================================================
 
 @app.route("/manga/episode-15/<int:page>")
 def manga_episode15(page):
@@ -370,6 +459,10 @@ def manga_episode15(page):
     )
 
 
+# =========================================================
+# MANGA EPISODE 16
+# =========================================================
+
 @app.route("/manga/episode-16/<int:page>")
 def manga_episode16(page):
     total_pages = 18
@@ -382,6 +475,11 @@ def manga_episode16(page):
         page=page,
         total_pages=total_pages
     )
+
+
+# =========================================================
+# MANGA EPISODE 17
+# =========================================================
 
 @app.route("/manga/episode-17/<int:page>")
 def manga_episode17(page):
@@ -396,6 +494,11 @@ def manga_episode17(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 18
+# =========================================================
+
 @app.route("/manga/episode-18/<int:page>")
 def manga_episode18(page):
     total_pages = 15
@@ -408,6 +511,11 @@ def manga_episode18(page):
         page=page,
         total_pages=total_pages
     )
+
+
+# =========================================================
+# MANGA EPISODE 19
+# =========================================================
 
 @app.route("/manga/episode-19/<int:page>")
 def manga_episode19(page):
@@ -422,6 +530,11 @@ def manga_episode19(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 20
+# =========================================================
+
 @app.route("/manga/episode-20/<int:page>")
 def manga_episode20(page):
     total_pages = 16
@@ -434,6 +547,11 @@ def manga_episode20(page):
         page=page,
         total_pages=total_pages
     )
+
+
+# =========================================================
+# MANGA EPISODE 21
+# =========================================================
 
 @app.route("/manga/episode-21/<int:page>")
 def manga_episode21(page):
@@ -448,6 +566,11 @@ def manga_episode21(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 22
+# =========================================================
+
 @app.route("/manga/episode-22/<int:page>")
 def manga_episode22(page):
     total_pages = 15
@@ -461,9 +584,13 @@ def manga_episode22(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 23
+# =========================================================
+
 @app.route("/manga/episode-23/<int:page>")
 def manga_episode23(page):
-
     total_pages = 21
 
     if page < 1 or page > total_pages:
@@ -474,6 +601,11 @@ def manga_episode23(page):
         page=page,
         total_pages=total_pages
     )
+
+
+# =========================================================
+# MANGA EPISODE 24
+# =========================================================
 
 @app.route("/manga/episode-24/<int:page>")
 def manga_episode24(page):
@@ -488,6 +620,11 @@ def manga_episode24(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 25
+# =========================================================
+
 @app.route("/manga/episode-25/<int:page>")
 def manga_episode25(page):
     total_pages = 20
@@ -501,5 +638,33 @@ def manga_episode25(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 26
+# SEASON 2 - EPISODE 1
+# THE BEGINNING OF THE WAR
+# =========================================================
+
+@app.route("/manga/episode-26/<int:page>")
+def manga_episode26(page):
+    total_pages = 15
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode26", page=1))
+
+    return render_template(
+        "manga_episode26.html",
+        page=page,
+        total_pages=total_pages
+    )
+
+
+# =========================================================
+# START FLASK SERVER
+# =========================================================
+
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    app.run(
+        debug=True,
+        port=8000
+    )
