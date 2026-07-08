@@ -679,6 +679,26 @@ def manga_episode27(page):
     )
 
 
+# =========================================================
+# MANGA EPISODE 28
+# SEASON 2 - EPISODE 3
+# The First Mission
+# =========================================================
+
+@app.route("/manga/episode-28/<int:page>")
+def manga_episode28(page):
+    total_pages = 18
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode28", page=1))
+
+    return render_template(
+        "manga_episode28.html",
+        page=page,
+        total_pages=total_pages
+    )
+
+
 
 # =========================================================
 # START FLASK SERVER
