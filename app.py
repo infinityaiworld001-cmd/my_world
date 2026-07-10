@@ -699,6 +699,25 @@ def manga_episode28(page):
     )
 
 
+# =========================================================
+# MANGA EPISODE 29
+# SEASON 2 - EPISODE 4
+# Dragon Island
+# =========================================================
+
+@app.route("/manga/episode-29/<int:page>")
+def manga_episode29(page):
+    total_pages = 16
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode29", page=1))
+
+    return render_template(
+        "manga_episode29.html",
+        page=page,
+        total_pages=total_pages
+    )
+
 
 # =========================================================
 # START FLASK SERVER
