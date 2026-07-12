@@ -719,6 +719,30 @@ def manga_episode29(page):
     )
 
 
+
+
+# =========================================================
+# MANGA EPISODE 30
+# SEASON 2 - EPISODE 5
+# The New Warrior
+# =========================================================
+
+@app.route("/manga/episode-30/<int:page>")
+def manga_episode30(page):
+    total_pages = 16
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode30", page=1))
+
+    return render_template(
+        "manga_episode30.html",
+        page=page,
+        total_pages=total_pages
+    )
+
+
+
+
 # =========================================================
 # START FLASK SERVER
 # =========================================================
