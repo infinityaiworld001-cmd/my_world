@@ -719,8 +719,6 @@ def manga_episode29(page):
     )
 
 
-
-
 # =========================================================
 # MANGA EPISODE 30
 # SEASON 2 - EPISODE 5
@@ -741,7 +739,24 @@ def manga_episode30(page):
     )
 
 
+# =========================================================
+# MANGA EPISODE 31
+# SEASON 2 - EPISODE 6
+# The Truth
+# =========================================================
 
+@app.route("/manga/episode-31/<int:page>")
+def manga_episode31(page):
+    total_pages = 18
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode31", page=1))
+
+    return render_template(
+        "manga_episode31.html",
+        page=page,
+        total_pages=total_pages
+    )
 
 # =========================================================
 # START FLASK SERVER
