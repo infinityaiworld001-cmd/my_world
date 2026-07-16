@@ -759,6 +759,26 @@ def manga_episode31(page):
     )
 
 # =========================================================
+# MANGA EPISODE 32
+# SEASON 2 - EPISODE 7
+# Battle of the Beast
+# =========================================================
+
+@app.route("/manga/episode-32/<int:page>")
+def manga_episode32(page):
+    total_pages = 16
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode32", page=1))
+
+    return render_template(
+        "manga_episode32.html",
+        page=page,
+        total_pages=total_pages
+    )
+
+
+# =========================================================
 # START FLASK SERVER
 # =========================================================
 
