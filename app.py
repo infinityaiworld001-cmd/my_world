@@ -777,6 +777,26 @@ def manga_episode32(page):
         total_pages=total_pages
     )
 
+# =========================================================
+# MANGA EPISODE 33
+# SEASON 2 - EPISODE 8
+# The Past warriors
+# =========================================================
+
+@app.route("/manga/episode-33/<int:page>")
+def manga_episode33(page):
+    total_pages = 18
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode33", page=1))
+
+    return render_template(
+        "manga_episode33.html",
+        page=page,
+        total_pages=total_pages
+    )
+
+
 
 # =========================================================
 # START FLASK SERVER
