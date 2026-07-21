@@ -815,6 +815,25 @@ def manga_episode34(page):
         total_pages=total_pages
     )
 
+# =========================================================
+# MANGA EPISODE 35
+# SEASON 2 - EPISODE 10
+# Dragon Awakening
+# =========================================================
+
+@app.route("/manga/episode-35/<int:page>")
+def manga_episode35(page):
+    total_pages = 16
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode35", page=1))
+
+    return render_template(
+        "manga_episode35.html",
+        page=page,
+        total_pages=total_pages
+    )
+
 
 # =========================================================
 # START FLASK SERVER
