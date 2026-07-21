@@ -796,6 +796,24 @@ def manga_episode33(page):
         total_pages=total_pages
     )
 
+# =========================================================
+# MANGA EPISODE 34
+# SEASON 2 - EPISODE 9
+# The Beginning of Betrayal
+# =========================================================
+
+@app.route("/manga/episode-34/<int:page>")
+def manga_episode34(page):
+    total_pages = 16
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode34", page=1))
+
+    return render_template(
+        "manga_episode34.html",
+        page=page,
+        total_pages=total_pages
+    )
 
 
 # =========================================================
