@@ -836,6 +836,25 @@ def manga_episode35(page):
 
 
 # =========================================================
+# MANGA EPISODE 36
+# SEASON 2 - EPISODE 11
+# The Dragon's Voice
+# =========================================================
+
+@app.route("/manga/episode-36/<int:page>")
+def manga_episode36(page):
+    total_pages = 16
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode36", page=1))
+
+    return render_template(
+        "manga_episode36.html",
+        page=page,
+        total_pages=total_pages
+    )
+
+# =========================================================
 # START FLASK SERVER
 # =========================================================
 
