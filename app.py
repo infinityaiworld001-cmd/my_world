@@ -854,6 +854,26 @@ def manga_episode36(page):
         total_pages=total_pages
     )
 
+
+# =========================================================
+# MANGA EPISODE 37
+# SEASON 2 - EPISODE 12
+# The Dragon's Final Memory
+# =========================================================
+
+@app.route("/manga/episode-37/<int:page>")
+def manga_episode37(page):
+    total_pages = 20
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode37", page=1))
+
+    return render_template(
+        "manga_episode37.html",
+        page=page,
+        total_pages=total_pages
+    )
+
 # =========================================================
 # START FLASK SERVER
 # =========================================================
