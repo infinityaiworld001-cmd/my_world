@@ -875,6 +875,25 @@ def manga_episode37(page):
     )
 
 # =========================================================
+# MANGA EPISODE 38
+# SEASON 2 - EPISODE 13
+# The Frozen Sky Mountain
+# =========================================================
+
+@app.route("/manga/episode-38/<int:page>")
+def manga_episode38(page):
+    total_pages = 20
+
+    if page < 1 or page > total_pages:
+        return redirect(url_for("manga_episode38", page=1))
+
+    return render_template(
+        "manga_episode38.html",
+        page=page,
+        total_pages=total_pages
+    )
+
+# =========================================================
 # START FLASK SERVER
 # =========================================================
 
